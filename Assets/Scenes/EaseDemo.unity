@@ -2409,6 +2409,7 @@ GameObject:
   - component: {fileID: 2092951996}
   - component: {fileID: 2092951998}
   - component: {fileID: 2092951997}
+  - component: {fileID: 2092951999}
   m_Layer: 5
   m_Name: Darkgrey
   m_TagString: Untagged
@@ -2473,6 +2474,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092951995}
   m_CullTransparentMesh: 1
+--- !u!114 &2092951999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092951995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15efa48fe8695314c8614777066022fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
