@@ -9,7 +9,7 @@ public class Easing : MonoBehaviour
 
     void Start()
     {
-        //circleOutline.DOColor(RandomColor(), 1.5f).SetEase(Ease.Linear).Pause();
+        circleOutline.DOColor(RandomColor(), 1.5f).SetEase(Ease.Linear).Pause();
         circleOutline.DOFillAmount(0, 1.5f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() => {
                 circleOutline.fillClockwise = !circleOutline.fillClockwise;
