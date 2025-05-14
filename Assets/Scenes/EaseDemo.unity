@@ -2486,6 +2486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15efa48fe8695314c8614777066022fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle: {fileID: 1916489340}
+  circleOutline: {fileID: 1064051840}
+  slider: {fileID: 547527017}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
