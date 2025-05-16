@@ -2489,6 +2489,7 @@ MonoBehaviour:
   circle: {fileID: 1916489340}
   circleOutline: {fileID: 1064051840}
   slider: {fileID: 547527017}
+  easeTime: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
