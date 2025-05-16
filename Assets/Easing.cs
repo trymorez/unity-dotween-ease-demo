@@ -6,7 +6,7 @@ public class Easing : MonoBehaviour
 {
     public Image circle, circleOutline;
     public Slider slider;
-    [SerializeField] float easeTime = 0.5f;
+    [SerializeField] float easeTime = 1.0f;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class Easing : MonoBehaviour
         circleOutline.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() =>
             {
-                circleOutline.fillClockwise = !circleOutline.fillClockwise;
+                //circleOutline.fillClockwise = !circleOutline.fillClockwise;
                 circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
             })
             .Pause();
@@ -23,7 +23,7 @@ public class Easing : MonoBehaviour
         circle.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() =>
             {
-                circleOutline.fillClockwise = !circleOutline.fillClockwise;
+                //circleOutline.fillClockwise = !circleOutline.fillClockwise;
                 circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
             })
             .Pause();
