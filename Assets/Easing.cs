@@ -10,21 +10,21 @@ public class Easing : MonoBehaviour
 
     void Start()
     {
-        circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
+        //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
         circleOutline.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() =>
             {
                 circleOutline.fillClockwise = !circleOutline.fillClockwise;
-                circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
+                //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
             })
             .Pause();
 
-        circle.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
+        //circle.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
         circle.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() =>
             {
-                circleOutline.fillClockwise = !circleOutline.fillClockwise;
-                circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
+                circle.fillClockwise = !circle.fillClockwise;
+                //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
             })
             .Pause();
 
