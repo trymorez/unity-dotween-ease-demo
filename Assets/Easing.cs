@@ -10,6 +10,8 @@ public class Easing : MonoBehaviour
 
     void Start()
     {
+        Sequence sequence;
+
         //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
         circleOutline.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
             .OnStepComplete(() =>
@@ -19,11 +21,13 @@ public class Easing : MonoBehaviour
             })
             .Pause();
 
-        //circle.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
-        circle.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
-            .OnStepComplete(() =>
+        sequence = DOTween.Sequence();
+        sequence.Append(circle.transform.DOScale(Vector3.zero, easeTime / 2));
+        sequence.Append(circle.transform.DOScale(Vector3.one / 2, easeTime / 2));
+        sequence.SetLoops(-1, LoopType.Restart);
+        sequence.OnComplete(() =>
             {
-                circle.fillClockwise = !circle.fillClockwise;
+                //circle.fillClockwise = !circle.fillClockwise;
                 //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear);
             })
             .Pause();
