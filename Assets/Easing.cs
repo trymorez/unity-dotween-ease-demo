@@ -22,8 +22,8 @@ public class Easing : MonoBehaviour
             .Pause();
 
         sequence = DOTween.Sequence();
-        sequence.Append(circle.transform.DOScale(Vector3.zero, easeTime / 2));
-        sequence.Append(circle.transform.DOScale(Vector3.one / 2, easeTime / 2));
+        sequence.Append(circle.transform.DOScale(Vector3.zero, easeTime * 0.5f));
+        sequence.Append(circle.transform.DOScale(Vector3.one * 0.5f, easeTime * 0.5f));
         sequence.SetLoops(-1, LoopType.Restart);
         sequence.OnComplete(() =>
             {
