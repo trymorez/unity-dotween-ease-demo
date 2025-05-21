@@ -7,11 +7,13 @@ public class Easing : MonoBehaviour
     public Image circle, circleOutline;
     public Slider slider;
     [SerializeField] float easeTime = 1.5f;
+    float HalfEaseTime;
 
     void Start()
     {
         Sequence sequenceCircle;
         Sequence sequenceSlider;
+        HalfEaseTime = easeTime * 0.5f;
 
         //circleOutline.DOColor(RandomColor(), easeTime).SetEase(Ease.Linear).Pause();
         circleOutline.DOFillAmount(0, easeTime).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo)
@@ -23,8 +25,8 @@ public class Easing : MonoBehaviour
         .Pause();
 
         sequenceCircle = DOTween.Sequence();
-        sequenceCircle.Append(circle.transform.DOScale(Vector3.zero, easeTime * 0.5f));
-        sequenceCircle.Append(circle.transform.DOScale(Vector3.one * 0.5f, easeTime * 0.5f));
+        sequenceCircle.Append(circle.transform.DOScale(Vector3.zero, HalfEaseTime));
+        sequenceCircle.Append(circle.transform.DOScale(Vector3.one * 0.5f, HalfEaseTime));
         sequenceCircle.SetLoops(-1, LoopType.Restart);
         sequenceCircle.OnComplete(() =>
         {
@@ -34,9 +36,9 @@ public class Easing : MonoBehaviour
         .Pause();
 
         sequenceSlider = DOTween.Sequence();
-        sequenceSlider.Append(slider.DOValue(1f, easeTime * 0.5f));
-        sequenceSlider.Append(slider.DOValue(0f, easeTime * 0.5f));
-        sequenceSlider.SetLoops(-1, LoopType.Restart);
+        sequenceSlider.Append(slider.DOValue(1f, HalfEaseTime).SetEase(Ease.Linear));
+        //sequenceSlider.Append(slider.DOValue(0f, HalfEaseTime));
+        sequenceSlider.SetLoops(-1, LoopType.Yoyo);
         sequenceSlider.OnComplete(() =>
         {
             //circle.fillClockwise = !circle.fillClockwise;
