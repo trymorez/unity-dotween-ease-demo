@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class Easing : MonoBehaviour
 {
     public Image circle, circleOutline;
     public Slider slider;
     public Ease ease = Ease.Linear;
+    [SerializeField] TMP_Dropdown EaseOption;
     [SerializeField] float easeTime = 1.5f;
     float HalfEaseTime;
 
