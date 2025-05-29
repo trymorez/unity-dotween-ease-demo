@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 2092951997}
   - component: {fileID: 2092951999}
   m_Layer: 5
-  m_Name: Darkgrey
+  m_Name: Easing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
