@@ -17,6 +17,7 @@ public class Easing : MonoBehaviour
         Sequence sequenceCircle;
         Sequence sequenceSlider;
         HalfEaseTime = easeTime * 0.5f;
+        ease = (Ease) EaseOption.value + 1;
 
         circleOutline.DOFillAmount(0, easeTime).SetEase(ease).SetLoops(-1, LoopType.Yoyo)
         .OnStepComplete(() =>
