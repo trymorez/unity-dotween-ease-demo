@@ -19,6 +19,7 @@ public class Easing : MonoBehaviour
         HalfEaseTime = easeTime * 0.5f;
         ease = (Ease) EaseOption.value + 1;
 
+        // circle filling
         circleOutline.DOFillAmount(0, easeTime).SetEase(ease).SetLoops(-1, LoopType.Yoyo)
         .OnStepComplete(() =>
         {
@@ -26,6 +27,7 @@ public class Easing : MonoBehaviour
         })
         .Pause();
 
+        // circle radial scale
         sequenceCircle = DOTween.Sequence();
         sequenceCircle.Append(circle.transform.DOScale(Vector3.zero, HalfEaseTime).SetEase(ease));
         sequenceCircle.SetLoops(-1, LoopType.Yoyo);
@@ -34,6 +36,7 @@ public class Easing : MonoBehaviour
         })
         .Pause();
 
+        // slider tweening
         sequenceSlider = DOTween.Sequence();
         sequenceSlider.Append(slider.DOValue(1f, HalfEaseTime).SetEase(ease));
         sequenceSlider.SetLoops(-1, LoopType.Yoyo);
